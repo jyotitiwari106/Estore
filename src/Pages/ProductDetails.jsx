@@ -37,7 +37,7 @@ const ProductDetails = () => {
         <Link to={'/'}>Home</Link> /
         <Link to={'/products'}> Products</Link> /
         <Link to={`/products/${product.category.toLowerCase()}`}> {product.category}</Link> /
-        <span className="text-indigo-500"> {product.name}</span>
+        <span className="text-green-500"> {product.name}</span>
       </p>
 
       <div className="flex flex-col md:flex-row gap-16 mt-4">
@@ -82,7 +82,7 @@ const ProductDetails = () => {
             <button onClick={() => addToCart(product._id)} className="w-full py-3.5 cursor-pointer font-medium bg-gray-100 text-gray-800/80 hover:bg-gray-200 transition" >
               Add to Cart
             </button>
-            <button onClick={() => { addToCart(product._id); navigate("/cart") }} className="w-full py-3.5 cursor-pointer font-medium bg-indigo-500 text-white hover:bg-indigo-600 transition" >
+            <button onClick={() => { addToCart(product._id); navigate("/cart") }} className="w-full py-3.5 cursor-pointer font-medium bg-green-500 text-white hover:bg-green-600 transition" >
               Buy now
             </button>
           </div>

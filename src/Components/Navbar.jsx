@@ -9,7 +9,7 @@ import { assets } from "../Assest/assets";
 
 const Navbar = () => {
     const [open, setOpen] = useState(false);
-    const { user, setUser, setShowUserLogin, navigate, setSearchQuery, searchQuery } = useAppContext();
+    const { user, setUser, setShowUserLogin, navigate, setSearchQuery, searchQuery, getCartCount,  } = useAppContext();
 
     const logout = async () => {
         setUser(null);
@@ -51,10 +51,10 @@ const Navbar = () => {
                     <SearchIcon />
                 </div>
 
-                <div onClick={() => navigate("/")} className="relative cursor-pointer">
+                <div onClick={() => navigate("/cart")} className="relative cursor-pointer">
                     <ShoppingCartOutlinedIcon />
                     <button className="absolute -top-2 -right-3 text-xs text-white bg-green-500 w-[18px] h-[18px] rounded-full">
-                        3
+                        {getCartCount()}
                     </button>
                 </div>
               
@@ -74,7 +74,16 @@ const Navbar = () => {
             </div>
 
             {/* Mobile Menu */}
-            <button
+            <div className=" flex items-center gap-6 sm:hidden">
+                
+                <div onClick={() => {navigate("/cart") }}className="relative cursor-pointer">
+                    <ShoppingCartOutlinedIcon onClick={() => {navigate("/cart") }} />
+                    <button className="absolute -top-2 -right-3 text-xs text-white bg-green-500 w-[18px] h-[18px] rounded-full">
+                        {getCartCount()}
+                    </button>
+                </div>
+             
+<button
                 onClick={() => setOpen(!open)} 
                 aria-label="Menu"
                 className="md:hidden flex items-center"
@@ -82,6 +91,8 @@ const Navbar = () => {
                 <MenuIcon /> 
             </button>
 
+            </div>
+            
             {open && (
                 <div
                     className={`${

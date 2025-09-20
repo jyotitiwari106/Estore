@@ -69,6 +69,11 @@ import vanilla_muffins_image from "./vanilla_muffins_image.png";
 import quinoa_image from "./quinoa_image.png";
 import brown_rice_image from "./brown_rice_image.png";
 import barley_image from "./barley_image.png";
+import tamato_image1 from './tamato_image1.png';
+import tamato_image2 from './tomato_image.png';
+import tamato_image3 from './tamato_image.png';
+
+
 
 export const assets = {
   logo,
@@ -224,7 +229,7 @@ export const dummyProducts = [
     category: "Vegetables",
     price: 40,
     offerPrice: 35,
-    image: [tomato_image],
+    image: [tomato_image,tamato_image1,tamato_image2, tamato_image3],
     description: [
       "Juicy and ripe",
       "Rich in Vitamin C",
